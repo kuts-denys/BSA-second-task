@@ -9,7 +9,11 @@ class Fighter {
 
     setDamage(damage) {
         this.health = this.health - damage;
-        console.log(`${this.name}'s health: ${this.health}`);
+        if (this.health <= 0) {
+            console.log(`${this.name}'s health dropped to 0. He is defeated!`)
+        } else {
+            console.log(`${this.name}'s health: ${this.health}`);
+        }
     }
 
     hit(enemy, point) {
